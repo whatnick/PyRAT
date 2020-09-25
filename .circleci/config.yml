@@ -28,7 +28,9 @@ jobs:
             source ~/miniconda/bin/activate
             conda env update -n base -f requirements.txt
             conda upgrade sip
-            sudo apt-get install -y libfftw3-dev
+            sudo add-apt-repository ppa:ubuntugis/ppa
+            sudo apt-get update
+            sudo apt-get install -y libfftw3-dev gdal-bin
             conda install -y -c conda-forge liblapack
 
       - run:
