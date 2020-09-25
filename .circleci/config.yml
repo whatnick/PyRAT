@@ -5,9 +5,8 @@
 version: 2
 jobs:
   build:
-    docker:
-      # Use focal for ubuntu 20.04
-      - image: buildpack-deps:focal
+    machine:
+      image: ubuntu-1604:202007-01
 
     working_directory: ~/repo
 
