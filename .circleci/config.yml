@@ -5,8 +5,8 @@
 version: 2
 jobs:
   build:
-    machine:
-      image: ubuntu-1604:202007-01
+    docker:
+      image: circleci/buildpack-deps:focal
 
     working_directory: ~/repo
 
@@ -21,10 +21,10 @@ jobs:
             source ~/miniconda/bin/activate
             conda env update -n base -f requirements.txt
             conda upgrade sip
-            sudo apt-get install -y software-properties-common
-            sudo add-apt-repository -y ppa:ubuntugis/ppa
-            sudo apt-get update
-            sudo apt-get install -y libfftw3-dev gdal-bin
+            apt-get install -y software-properties-common
+            add-apt-repository -y ppa:ubuntugis/ppa
+            apt-get update
+            apt-get install -y libfftw3-dev gdal-bin
             conda install -y -c conda-forge liblapack
 
       - run:
