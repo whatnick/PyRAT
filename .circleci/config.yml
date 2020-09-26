@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/buildpack-deps:focal
+      - image: circleci/buildpack-deps:bionic
 
     working_directory: ~/repo
 
